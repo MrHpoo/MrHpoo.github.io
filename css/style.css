@@ -6,24 +6,29 @@ body, h1, h2, h3, p, ul, li {
 
 body {
     font-family: Arial, sans-serif;
-}
-
-/* Global styles */
-body {
     background-color: #e0f7e0; /* 浅绿色背景 */
     color: #333; /* 文字颜色 */
     line-height: 1.6;
     font-size: 16px;
 }
 
+/* Global styles */
 header {
     background-color: #fff; /* 白色背景 */
     padding: 20px;
     border-bottom: 1px solid #ccc;
+    text-align: center; /* 让标题居中 */
+    display: flex;
+    justify-content: space-between; /* 标题和导航栏之间的间距 */
+    align-items: center;
 }
 
 nav ul {
     list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
 }
 
 nav ul li {
@@ -34,30 +39,46 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: #333;
+    font-weight: bold; /* 加粗链接字体 */
+    transition: color 0.3s; /* 添加过渡效果 */
+}
+
+nav ul li a:hover {
+    color: #1a8c1a; /* 鼠标悬停时变换颜色 */
 }
 
 main {
-    max-width: 900px;
+    max-width: 100%; /* 使用百分比来适应不同屏幕尺寸 */
     margin: 0 auto;
     padding: 20px;
+    text-align: center; /* 让内容居中 */
 }
 
 footer {
     background-color: #fff; /* 白色背景 */
     padding: 20px;
     border-top: 1px solid #ccc;
-    text-align: center;
+    text-align: right; /* 让页脚文字右对齐 */
 }
 
-/* Specific page styles */
-/* index.html */
-/* No specific styles needed for index.html */
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
 
-/* pages/about.html */
-/* No specific styles needed for about.html */
+    nav ul {
+        flex-direction: column;
+    }
 
-/* pages/team.html */
-/* No specific styles needed for team.html */
+    main {
+        padding: 10px;
+    }
+}
 
-/* pages/gallery.html */
-/* No specific styles needed for gallery.html */
+/* 图片在不同屏幕尺寸下的自适应 */
+img {
+    max-width: 100%;
+    height: auto;
+}
